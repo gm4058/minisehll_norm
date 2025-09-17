@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jechoi <jechoi@student.42gyeongsan.kr>     +#+  +:+       +#+        */
+/*   By: dsagong <dsagong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 16:29:24 by jechoi            #+#    #+#             */
-/*   Updated: 2025/09/10 13:33:26 by jechoi           ###   ########.fr       */
+/*   Updated: 2025/09/17 16:07:18 by dsagong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	update_env_array(t_shell *shell)
 {
 	if (shell->env_array)
 	{
-		free(shell->env_array);
+		free_env_array(shell->env_array);
 		shell->env_array = NULL;
 	}
 	shell->env_array = env_list_to_array(shell->envp_list);
