@@ -6,7 +6,7 @@
 /*   By: dsagong <dsagong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 12:30:29 by jechoi            #+#    #+#             */
-/*   Updated: 2025/09/17 14:16:43 by dsagong          ###   ########.fr       */
+/*   Updated: 2025/09/17 15:40:45 by dsagong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ int		count_commands(t_cmd *cmd);
 int		setup_redirections(t_cmd *cmd);
 int		input_file_process(t_file *file);
 int		single_cmd(t_cmd *commands, t_shell *shell);
+int		create_pipes(int **pipe_fds, int cmd_count);
+int		util_create_pipes(int **pipe_fds, int cmd_count);
 
 #endif

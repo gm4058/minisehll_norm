@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pwd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jechoi <jechoi@student.42gyeongsan.kr>     +#+  +:+       +#+        */
+/*   By: dsagong <dsagong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 20:09:03 by jechoi            #+#    #+#             */
-/*   Updated: 2025/09/15 16:12:44 by jechoi           ###   ########.fr       */
+/*   Updated: 2025/09/17 15:35:15 by dsagong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "builtins.h"
 
-int	is_builtin_command(char *cmd)
+int	isbc(char *cmd)
 {
 	if (!cmd)
 		return (0);

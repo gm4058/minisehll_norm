@@ -6,7 +6,7 @@
 /*   By: dsagong <dsagong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 14:41:47 by dsagong           #+#    #+#             */
-/*   Updated: 2025/09/17 13:40:28 by dsagong          ###   ########.fr       */
+/*   Updated: 2025/09/17 15:28:23 by dsagong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,5 +117,11 @@ typedef struct s_shell
 	int		exit_flag;
 	int		signal_mode;
 }	t_shell;
+
+typedef struct s_exec_info
+{
+	int	cmd_index;
+	int	cmd_count;
+}	t_exec_info;
 
 #endif

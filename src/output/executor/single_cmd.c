@@ -6,7 +6,7 @@
 /*   By: dsagong <dsagong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 13:48:35 by jechoi            #+#    #+#             */
-/*   Updated: 2025/09/17 14:59:02 by dsagong          ###   ########.fr       */
+/*   Updated: 2025/09/17 15:35:19 by dsagong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ int	single_cmd(t_cmd *commands, t_shell *shell)
 		restore_stdio(&saved_stdin, &saved_stdout);
 		return (g_exit_status);
 	}
-	if (is_builtin_command(commands->args[0]))
+	if (isbc(commands->args[0]))
 	{
 		if (apply_redirections(commands, &saved_stdin, &saved_stdout)
 			== FAILURE)

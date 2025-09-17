@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jechoi <jechoi@student.42gyeongsan.kr>     +#+  +:+       +#+        */
+/*   By: dsagong <dsagong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 11:45:02 by jechoi            #+#    #+#             */
-/*   Updated: 2025/09/16 19:23:20 by jechoi           ###   ########.fr       */
+/*   Updated: 2025/09/17 15:35:30 by dsagong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <errno.h>
 # include <string.h>
 
-int		is_builtin_command(char *cmd);
+int		isbc(char *cmd);
 int		ft_cd(t_cmd *cmd, t_shell *shell);
 int		ft_echo(t_cmd *cmd);
 int		ft_env(t_cmd *cmd, t_shell *shell);
