@@ -6,7 +6,7 @@
 /*   By: dsagong <dsagong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 20:00:39 by jechoi            #+#    #+#             */
-/*   Updated: 2025/09/17 14:14:23 by dsagong          ###   ########.fr       */
+/*   Updated: 2025/09/17 18:31:52 by dsagong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,14 +92,12 @@ int	setup_redirections(t_cmd *cmd)
 	current = cmd->file;
 	while (current)
 	{
-		if (current->input_file && current->input_file->filename
-			&& ft_strlen(current->input_file->filename) > 0)
+		if (current->input_file && current->input_file->filename)
 		{
 			if (input_file_process(current) == FAILURE)
 				return (FAILURE);
 		}
-		if (current->output_file && current->output_file->filename
-			&& ft_strlen(current->output_file->filename) > 0)
+		if (current->output_file && current->output_file->filename)
 		{
 			if (output_file_process(current) == FAILURE)
 				return (FAILURE);
