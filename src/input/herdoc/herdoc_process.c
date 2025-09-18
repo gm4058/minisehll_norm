@@ -6,7 +6,7 @@
 /*   By: dsagong <dsagong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 11:59:44 by dsagong           #+#    #+#             */
-/*   Updated: 2025/09/18 15:16:56 by dsagong          ###   ########.fr       */
+/*   Updated: 2025/09/18 15:22:02 by dsagong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	read_heredoc(t_prompt *prompt, t_delim_info delim_info)
 	if (pid == 0)
 	{
 		close(fd[0]);
-		heredoc_child(delim_info.cooked_delim, fd[1], prompt->envp_lst);
+		heredoc_child(delim_info, fd[1], prompt->envp_lst);
 	}
 	close(fd[1]);
 	waitpid(pid, &status, 0);
