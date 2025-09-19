@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   exec_pipe.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsagong <dsagong@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jechoi <jechoi@student.42gyeongsan.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 19:57:14 by jechoi            #+#    #+#             */
-/*   Updated: 2025/09/17 15:42:24 by dsagong          ###   ########.fr       */
+/*   Updated: 2025/09/19 10:45:20 by jechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "executor.h"
 #include "utils.h"
+#include "sigft.h"
 
 static int	fork_and_execute(t_cmd *cmd, t_shell *shell, int *pipe_fds,	\
 		t_exec_info *info)
@@ -23,6 +24,7 @@ static int	fork_and_execute(t_cmd *cmd, t_shell *shell, int *pipe_fds,	\
 		return (-1);
 	if (pid == 0)
 	{
+		setup_signals_child();
 		setup_child_process(cmd, pipe_fds, info->cmd_index, info->cmd_count);
 		if (setup_redirections(cmd) == FAILURE)
 			exit (FAILURE);

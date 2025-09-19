@@ -6,11 +6,12 @@
 /*   By: jechoi <jechoi@student.42gyeongsan.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 20:00:08 by jechoi            #+#    #+#             */
-/*   Updated: 2025/09/16 20:30:07 by jechoi           ###   ########.fr       */
+/*   Updated: 2025/09/19 10:45:00 by jechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "executor.h"
+#include <unistd.h>
 
 pid_t	fork_process(void)
 {
@@ -47,11 +48,12 @@ int	wait_for_children(pid_t *pids, int count)
 		}
 		i++;
 	}
+	print_signal(exit_status);
 	return (exit_status);
 }
 
 void	setup_child_process(t_cmd *cmd, int *pipe_fds, \
-							int cmd_index, int cmd_count)
+		int cmd_index, int cmd_count)
 {
 	if (!(cmd->hd && cmd->hd != -1) && cmd_index > 0)
 	{
